@@ -12,7 +12,7 @@
         <field name="nextcall" eval="datetime.now().strftime('%Y-%m-01 16:00:00')"/>
         <field name="state">code</field>
         <field name="code">
-model._auto_create_contacts(limit=5000)
+model._auto_create_contacts(limit=5000, cron_id=30)
         </field>
     </record>
 </odoo>
