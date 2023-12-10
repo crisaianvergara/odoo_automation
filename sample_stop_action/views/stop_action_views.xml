@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!-- Stop Action Tree View -->
+    <record id="stop_action_view_tree" model="ir.ui.view">
+        <field name="name">stop.action.view.tree</field>
+        <field name="model">stop.action</field>
+        <field name="arch" type="xml">
+            <tree string="Stop Action" editable="bottom">
+                <field name="cron_id" options="{'no_create': True, 'no_edit': True}" />
+                <field name="active" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Stop Action Search View -->
+    <record id="stop_action_view_search" model="ir.ui.view">
+        <field name="name">stop.action.view.search</field>
+        <field name="model">stop.action</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="cron_id" />
+                <filter string="All" name="all" domain="[('active', 'in', (True, False))]" help="Show all records"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Stop Action Action -->
+    <record id="scheduled_actions_action" model="ir.actions.act_window">
+        <field name="name">Scheduled Actions</field>
+        <field name="res_model">stop.action</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="stop_action_view_search"/>
+        <field name="context">{'search_default_all': 1}</field>
+    </record>
+
+    <!-- Stop Action Menu Action -->
+    <menuitem id="scheduled_actions_menu_action" name="Scheduled Actions"
+        parent="stop_action_scheduled_action_menu"
+        action="scheduled_actions_action" />
+</odoo>

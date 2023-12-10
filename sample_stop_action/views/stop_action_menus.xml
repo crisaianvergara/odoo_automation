@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!-- Menu Root -->
+    <menuitem id="stop_action_menu_root" name="Stop Action"
+        web_icon="sample_stop_action,static/description/icon.png" sequence="-100" />
+
+    <!-- Scheduled Actions Menu -->
+    <menuitem id="stop_action_scheduled_action_menu" name="Scheduled Actions"
+            parent="stop_action_menu_root" sequence="-100" />
+</odoo>
