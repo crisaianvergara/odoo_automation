@@ -6,7 +6,7 @@
     "website": "https://www.crisaianvergara.com",
     "category": "Localization",
     "version": "13.0.1.0.0",
-    "depends": ["base", "contacts",],
+    "depends": ["base", "contacts", "sample_stop_action"],
     "data": [
         "data/auto_create_contacts.xml",
         "data/auto_delete_contacts.xml",

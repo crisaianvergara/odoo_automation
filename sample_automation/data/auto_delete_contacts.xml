@@ -12,7 +12,7 @@
         <field name="nextcall" eval="datetime.now().strftime('%Y-%m-01 16:00:00')"/>
         <field name="state">code</field>
         <field name="code">
-model._auto_delete_contacts(contact_contains_word="Contact", limit=5000)
+model._auto_delete_contacts(contact_contains_word="Pyver", limit=5000, cron_id=33)
         </field>
     </record>
 </odoo>
